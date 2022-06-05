@@ -1,3 +1,9 @@
 export const parseEnv = () => {
-    // Write your code here 
+  const result = process.argv
+    .filter((item) => item.match(/^RSS_.+/))
+    .map(str => `${str}`)
+    .join("; ");
+  console.log(result);
 };
+
+parseEnv();
